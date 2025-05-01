@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 18px; /* Increased base font size */
+}
+
+.formbold-main-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px; /* Increased padding */
+}
+
+.formbold-form-wrapper {
+  margin: 0 auto;
+  max-width: 850px; /* Increased max-width */
+  width: 100%;
+  background: white;
+  border-radius: 8px; /* Added slight border-radius for a softer look */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Added a subtle shadow */
+  padding: 30px; /* Added padding inside the form wrapper */
+}
+
+.formbold-steps {
+  padding-bottom: 22px;
+  margin-bottom: 40px;
+  border-bottom: 1.5px solid #DDE3EC;
+  display: flex; /* Add flex to the steps container */
+  justify-content: center; /* Center the ul within the steps container */
+}
+
+.formbold-steps ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  gap: 30px; /* Adjust the gap between the list items as needed */
+}
+
+.formbold-steps li {
+  display: flex;
+  align-items: center;
+  gap: 9px; /* Adjust this value to control the space between the circle and the word */
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 28px;
+  color: #536387;
+  padding: 0 15px; /* Add horizontal padding (left and right) */
+}
+
+.formbold-steps li span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #DDE3EC;
+  border-radius: 50%;
+  width: 50px; /* Increased width */
+  height: 50px; /* Increased height */
+  font-weight: 500;
+  font-size: 16px; /* Increased font size */
+  line-height: 50px; /* Increased line height to center text vertically */
+  color: #536387;
+}
+
+.formbold-steps li.active {
+  color: #07074D;
+}
+
+.formbold-steps li.active span {
+  background: #6A64F1;
+  color: #FFFFFF;
+}
+
+.formbold-input-flex {
+  display: flex;
+  gap: 25px; /* Increased gap */
+  margin-bottom: 28px; /* Increased margin */
+}
+
+.formbold-input-flex > div {
+  width: 50%;
+}
+
+.formbold-form-input {
+  width: 100%;
+  padding: 15px 25px; /* Increased padding */
+  border-radius: 6px; /* Slightly more rounded */
+  border: 1.5px solid #DDE3EC; /* Slightly thicker border */
+  background: #FFFFFF;
+  font-weight: 500;
+  font-size: 18px; /* Increased font size */
+  color: #536387;
+  outline: none;
+  resize: none;
+}
+
+.formbold-form-input:focus {
+  border-color: #6a64f1;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05); /* Slightly larger shadow */
+}
+
+.formbold-form-label {
+  color: #07074D;
+  font-weight: 500;
+  font-size: 16px; /* Increased font size */
+  line-height: 28px; /* Increased line height */
+  display: block;
+  margin-bottom: 12px; /* Increased margin */
+}
+
+.formbold-form-confirm {
+  border-bottom: 1.5px solid #DDE3EC; /* Slightly thicker border */
+  padding-bottom: 40px; /* Increased padding */
+}
+
+.formbold-form-confirm p {
+  font-size: 18px; /* Increased font size */
+  line-height: 28px; /* Increased line height */
+  color: #536387;
+  margin-bottom: 28px; /* Increased margin */
+  width: 85%; /* Slightly wider */
+}
+
+.formbold-form-confirm > div {
+  display: flex;
+  gap: 20px; /* Increased gap */
+}
+
+.formbold-confirm-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #FFFFFF;
+  border: 0.8px solid #DDE3EC; /* Slightly thicker border */
+  border-radius: 6px; /* Slightly more rounded */
+  font-size: 18px; /* Increased font size */
+  line-height: 28px; /* Increased line height */
+  color: #536387;
+  cursor: pointer;
+  padding: 12px 22px; /* Increased padding */
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12); /* Slightly larger shadow */
+}
+
+.formbold-confirm-btn.active {
+  background: #6A64F1;
+  color: #FFFFFF;
+}
+
+.formbold-form-step-1,
+.formbold-form-step-2,
+.formbold-form-step-3 {
+  display: none;
+}
+
+.formbold-form-step-1.active,
+.formbold-form-step-2.active,
+.formbold-form-step-3.active {
+  display: block;
+}
+
+.formbold-form-btn-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 30px; /* Increased gap */
+  margin-top: 30px; /* Increased margin */
+}
+
+.formbold-back-btn {
+  cursor: pointer;
+  background: #FFFFFF;
+  border: none;
+  color: #07074D;
+  font-weight: 500;
+  font-size: 18px; /* Increased font size */
+  line-height: 28px; /* Increased line height */
+  display: none;
+}
+
+.formbold-back-btn.active {
+  display: block;
+}
+
+.formbold-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px; /* Increased font size */
+  border-radius: 6px; /* Slightly more rounded */
+  padding: 12px 30px; /* Increased padding */
+  border: none;
+  font-weight: 500;
+  background-color: #6A64F1;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05); /* Slightly larger shadow */
+}
+
+.formbold-btn:hover {
+  box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.08); /* Slightly larger hover shadow */
+}
