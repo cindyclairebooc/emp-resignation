@@ -115,6 +115,10 @@ body {
   margin-bottom: 12px; /* Increased margin */
 }
 
+.mb-20 {
+  margin-bottom: 20px;
+}
+
 .formbold-form-confirm {
   border-bottom: 1.5px solid #DDE3EC; /* Slightly thicker border */
   padding-bottom: 40px; /* Increased padding */
@@ -206,4 +210,50 @@ body {
 
 .formbold-btn:hover {
   box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.08); /* Slightly larger hover shadow */
+}
+
+.formbold-radio-label {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.formbold-radio-input {
+  position: relative;
+  margin-right: 10px;
+  width: 30px; /* Make the radio button larger */
+  height: 30px;
+  border: 2px solid #ced4da;
+  border-radius: 50%;
+  appearance: none;
+  outline: none;
+}
+
+.formbold-radio-input:checked {
+  border-color: #4CAF50; /* Change color when checked */
+}
+
+.formbold-radio-input:checked::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #4CAF50;
+  width: 12px; /* Make the inner circle larger */
+  height: 12px;
+  border-radius: 50%;
+  display: block;
+}
+
+.formbold-radio-label span {
+  font-size: 16px; /* Increase label font size */
+  color: #333;
+}
+
+.formbold-radio-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
