@@ -86,7 +86,10 @@
                             <option value="phd">PhD</option>
                         </select>
                     </div>
-                </div>  <div class="formbold-form-step-2">
+                    
+                </div>  
+                
+                <div class="formbold-form-step-2">
                     <div class="mb-20">
                         <label for="department" class="formbold-form-label"> Department </label>
                         <select name="department" id="department" class="formbold-form-input">
@@ -129,62 +132,103 @@
                         </div>
 
                         <div>
-                          <label class="formbold-form-label">Promotion?</label>
+                          <label class="formbold-form-label">Number of Promotions</label>
                           <div class="formbold-radio-group">
-                              <label class="formbold-radio-label">
-                                  <input type="radio" name="promotion" value="yes" class="formbold-radio-input" />
-                                  Yes
-                              </label>
-                              <label class="formbold-radio-label">
-                                  <input type="radio" name="promotion" value="no" class="formbold-radio-input" />
-                                  No
-                              </label>
+                            <input
+                            type="number"
+                            name="promos"
+                            id="promos"
+                            class="formbold-form-input"
+                            min="0"
+                            max="3"
+                            />
                           </div>
                         </div>
                     </div>
-
-                    
                 </div>
 
                 <div class="formbold-form-step-3">
                     <div class="formbold-form-confirm">
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
-                        </p>
-
-                        <div>
-                            <button class="formbold-confirm-btn active">
-                                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <circle cx="11" cy="11" r="10.5" fill="white" stroke="#DDE3EC"/>
-                                    <g clip-path="url(#clip0_1667_1314)">
-                                        <path d="M9.83343 12.8509L15.1954 7.48828L16.0208 8.31311L9.83343 14.5005L6.12109 10.7882L6.94593 9.96336L9.83343 12.8509Z" fill="#536387"/>
-                                    </g>
-                                    <defs>
-                                        <clipPath id="clip0_1667_1314">
-                                            <rect width="14" height="14" fill="white" transform="translate(4 4)"/>
-                                        </clipPath>
-                                    </defs>
-                                </svg>
-                                Yes! I want it.
-                            </button>
-
-                            <button class="formbold-confirm-btn">
-                                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <circle cx="11" cy="11" r="10.5" fill="white" stroke="#DDE3EC"/>
-                                    <g clip-path="url(#clip0_1667_1314)">
-                                        <path d="M9.83343 12.8509L15.1954 7.48828L16.0208 8.31311L9.83343 14.5005L6.12109 10.7882L6.94593 9.96336L9.83343 12.8509Z" fill="#536387"/>
-                                    </g>
-                                    <defs>
-                                        <clipPath id="clip0_1667_1314">
-                                            <rect width="14" height="14" fill="white" transform="translate(4 4)"/>
-                                        </clipPath>
-                                    </defs>
-                                </svg>
-                                No! I don’t want it.
-                            </button>
+                      <div class="formbold-input-flex">
+                        <div style="width: 100%;">
+                            <label for="salary" class="formbold-form-label"> Monthly Salary </label>
+                            <input type="number" name="salary" id="salary" class="formbold-form-input" />
                         </div>
+                      </div>
+                  
+                      <div class="formbold-input-flex">
+                        <div class="mb-10">
+                          <label for="projects" class="formbold-form-label"> Projects Handled </label>
+                          <input type="number" name="projects" id="projects" class="formbold-form-input" />
+                        </div>
+                        <div class="mb-10">
+                          <label for="salaryPerProject" class="formbold-form-label"> Salary Per Project </label>
+                          <input type="number" name="salaryPerProject" id="salaryPerProject" class="formbold-form-input" />
+                        </div>
+                      </div>
+                  
+                      <div class="formbold-input-flex">
+                        <div style="width: 100%;">
+                            <label for="workHours" class="formbold-form-label"> Total Work Hours </label>
+                            <input type="number" name="workHours" id="workHours" class="formbold-form-input" />
+                        </div>
+                      </div>
+                  
+                      <div class="mb-20">
+                        <label for="overtime" class="formbold-form-label"> Overtime Ratio </label>
+                        <input type="range" name="overtime" id="overtime" class="formbold-form-input" min="0" max="1" step="0.01" />
+                      </div>
+                  
+                      <div class="mb-20">
+                        <label for="performance" class="formbold-form-label"> Performance Score </label>
+                        <input type="range" name="performance" id="performance" class="formbold-form-input" min="1" max="10" />
+                      </div>
+                  
+                      <div class="mb-20">
+                        <label for="satisfaction" class="formbold-form-label"> Employee Satisfaction Score </label>
+                        <input type="range" name="satisfaction" id="satisfaction" class="formbold-form-input" min="1" max="10" />
+                      </div>
+                  
+                      <div class="formbold-input-flex">
+                        <div class="mb-10">
+                          <label for="training" class="formbold-form-label"> Training Hours </label>
+                          <input type="number" name="training" id="training" class="formbold-form-input" />
+                        </div>
+                        <div class="mb-10">
+                          <label for="sickDays" class="formbold-form-label"> Sick Days </label>
+                          <input type="number" name="sickDays" id="sickDays" class="formbold-form-input" />
+                        </div>
+                      </div>
                     </div>
                 </div>
+
+                <div class="formbold-form-step-4">
+                    <div class="formbold-form-confirm">
+                      <div class="formbold-input-flex">
+                        <div class="mb-20">
+                          <label for="remoteWork" class="formbold-form-label"> Remote Work Frequency </label>
+                          <input
+                            type="number"
+                            name="remoteWork"
+                            id="remoteWork"
+                            class="formbold-form-input"
+                            min="0"
+                          />
+                        </div>
+                  
+                        <div class="mb-20">
+                          <label for="teamSize" class="formbold-form-label"> Team Size </label>
+                          <input
+                            type="number"
+                            name="teamSize"
+                            id="teamSize"
+                            class="formbold-form-input"
+                            min="1"
+                          />
+                        </div>
+                      </div>
+                    </div> <!-- Close .formbold-form-confirm -->
+                  </div> <!-- ✅ Close .formbold-form-step-4 -->
 
                 <div class="formbold-form-btn-wrapper">
                     <button class="formbold-back-btn">
