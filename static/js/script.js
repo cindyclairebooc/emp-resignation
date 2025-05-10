@@ -75,3 +75,14 @@ formBackBtn.addEventListener("click", function(event) {
       formSubmitBtn.textContent = 'Next'
     }
   })
+
+function updateSliderValue(slider) {
+    const valueDisplay = document.getElementById(slider.id + 'Value');
+    valueDisplay.textContent = slider.value;
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.formbold-slider').forEach(slider => {
+      updateSliderValue(slider);
+    });
+  });
