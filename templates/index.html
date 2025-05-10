@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Employee Resignation Prediction</title>
+
+    <style>
+        body {
+          font-family: "Inter", sans-serif;
+          font-size: 18px; 
+          background-image: url('{{ url_for("static", filename="img/beegees.jpg") }}');
+          background-size: cover;
+          background-position: center center;
+          background-attachment: fixed;
+        }
+    </style>
+</head>
+<body>
+    <div class="formbold-main-wrapper">
+        <div class="formbold-form-wrapper">
+            <form action="https://formbold.com/s/FORM_ID" method="POST">
+                <div class="formbold-steps">
+                    <ul>
+                        <li class="formbold-step-menu1 active">
+                            <span>1</span>
+                            Personal Info
+                        </li>
+                        <li class="formbold-step-menu2">
+                            <span>2</span>
+                            Job Info
+                        </li>
+                        <li class="formbold-step-menu3">
+                            <span>3</span>
+                            Metrics
+                        </li>
+                        <li class="formbold-step-menu4">
+                            <span>4</span>
+                            Workstyle
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="formbold-form-step-1 active">
+                    <div class="formbold-input-flex">
+                        <div>
+                            <label for="firstname" class="formbold-form-label"> First name </label>
+                            <input
+                                type="text"
+                                name="firstname"
+                                placeholder="Juan"
+                                id="firstname"
+                                class="formbold-form-input"
+                            />
+                        </div>
+                        <div>
+                            <label for="lastname" class="formbold-form-label"> Last name </label>
+                            <input
+                                type="text"
+                                name="lastname"
+                                placeholder="Dela Cruz"
+                                id="lastname"
+                                class="formbold-form-input"
+                            />
+                        </div>
+                    </div>
+
+                    <div class="formbold-input-flex">
+                        <div>
+                            <label for="age" class="formbold-form-label"> Age </label>
+                            <input
+                                type="number"
+                                name="age"
+                                id="age"
+                                class="formbold-form-input"
+                                min="0"
+                                max="100"
+                            />
+                        </div>
+                        <div>
+                            <label for="gender" class="formbold-form-label">Gender</label>
+                            <select name="gender" id="gender" class="formbold-form-input">
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="educ" class="formbold-form-label"> Education Level </label>
+                        <select name="educ" id="educ" class="formbold-form-input">
+                            <option value="hs">High School</option>
+                            <option value="bachelor">Bachelor</option>
+                            <option value="master">Master</option>
+                            <option value="phd">PhD</option>
+                        </select>
+                    </div>
+                    
+                </div>  
+                
+                <div class="formbold-form-step-2">
+                    <div class="mb-20">
+                        <label for="department" class="formbold-form-label"> Department </label>
+                        <select name="department" id="department" class="formbold-form-input">
+                            <option value="it">IT</option>
+                            <option value="finance">Finance</option>
+                            <option value="custser">Customer Service</option>
+                            <option value="eng">Engineering</option>
+                            <option value="market">Marketing</option>
+                            <option value="hr">HR</option>
+                            <option value="oprtns">Operations</option>
+                            <option value="sales">Sales</option>
+                            <option value="legal">Legal</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-20">
+                        <label for="jobtitle" class="formbold-form-label"> Job Title </label>
+                        <select name="jobtitle" id="jobtitle" class="formbold-form-input">
+                            <option value="analyst">Analyst</option>
+                            <option value="consult">Consultant</option>
+                            <option value="dev">Developer</option>
+                            <option value="engr">Engineer</option>
+                            <option value="manager">Manager</option>
+                            <option value="special">Specialist</option>
+                            <option value="tech">Technician</option>
+                        </select>
+                    </div>
+
+                    <div class="formbold-input-flex">
+                        <div class="mb-20">
+                            <label for="years" class="formbold-form-label"> Years at Company </label>
+                            <input
+                            type="number"
+                            name="years"
+                            id="years"
+                            class="formbold-form-input"
+                            min="0"
+                            max="50"
+                            />
+                        </div>
+
+                        <div>
+                          <label class="formbold-form-label">Number of Promotions</label>
+                          <div class="formbold-radio-group">
+                            <input
+                            type="number"
+                            name="promos"
+                            id="promos"
+                            class="formbold-form-input"
+                            min="0"
+                            max="3"
+                            />
+                          </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="formbold-form-step-3">
+                    <div class="formbold-form-confirm">
+                      <div class="formbold-input-flex">
+                        <div style="width: 100%;">
+                            <label for="salary" class="formbold-form-label"> Monthly Salary </label>
+                            <input type="number" name="salary" id="salary" class="formbold-form-input" />
+                        </div>
+                      </div>
+                  
+                      <div class="formbold-input-flex">
+                        <div class="mb-10">
+                          <label for="projects" class="formbold-form-label"> Projects Handled </label>
+                          <input type="number" name="projects" id="projects" class="formbold-form-input" />
+                        </div>
+                        <div class="mb-10">
+                          <label for="salaryPerProject" class="formbold-form-label"> Salary Per Project </label>
+                          <input type="number" name="salaryPerProject" id="salaryPerProject" class="formbold-form-input" />
+                        </div>
+                      </div>
+                  
+                      <div class="formbold-input-flex">
+                        <div style="width: 100%;">
+                            <label for="workHours" class="formbold-form-label"> Total Work Hours </label>
+                            <input type="number" name="workHours" id="workHours" class="formbold-form-input" />
+                        </div>
+                      </div>
+                  
+                      <div class="slider-container">
+                        <label for="overtime" class="formbold-form-label">Overtime Ratio</label>
+                        <div class="slider-wrapper">
+                          <span class="min-label">0</span>
+                          <div class="slider-flex">
+                            <input type="range" id="overtime" name="overtime" min="0" max="1" step="0.01" value="0.5" class="formbold-slider" oninput="updateSliderValue(this)" />
+                          </div>
+                          <span class="max-label">1</span>
+                          <span class="slider-value" id="overtimeValue">0.5</span>
+                        </div>
+                      </div>
+
+                      <div class="slider-container">
+                        <label for="performance" class="formbold-form-label">Performance Score</label>
+                        <div class="slider-wrapper">
+                          <span class="min-label">1</span>
+                          <div class="slider-flex">
+                            <input type="range" id="performance" name="performance" min="1" max="10" value="5" class="formbold-slider" oninput="updateSliderValue(this)" />
+                          </div>
+                          <span class="max-label">10</span>
+                          <span class="slider-value" id="performanceValue">5</span>
+                        </div>
+                      </div>
+
+                      <div class="slider-container">
+                        <label for="satisfaction" class="formbold-form-label">Employee Satisfaction Score</label>
+                        <div class="slider-wrapper">
+                          <span class="min-label">1</span>
+                          <div class="slider-flex">
+                            <input type="range" id="satisfaction" name="satisfaction" min="1" max="10" value="5" class="formbold-slider" oninput="updateSliderValue(this)" />
+                          </div>
+                          <span class="max-label">10</span>
+                          <span class="slider-value" id="satisfactionValue">5</span>
+                        </div>
+                      </div>
+                  
+                      <div class="formbold-input-flex">
+                        <div class="mb-10">
+                          <label for="training" class="formbold-form-label"> Training Hours </label>
+                          <input type="number" name="training" id="training" class="formbold-form-input" />
+                        </div>
+                        <div class="mb-10">
+                          <label for="sickDays" class="formbold-form-label"> Sick Days </label>
+                          <input type="number" name="sickDays" id="sickDays" class="formbold-form-input" />
+                        </div>
+                      </div>
+                    </div>
+                </div>
+
+                <div class="formbold-form-step-4">
+                    <div class="formbold-form-confirm">
+                      <div class="formbold-input-flex">
+                        <div class="mb-20">
+                          <label for="remoteWork" class="formbold-form-label"> Remote Work Frequency </label>
+                          <input
+                            type="number"
+                            name="remoteWork"
+                            id="remoteWork"
+                            class="formbold-form-input"
+                            min="0"
+                          />
+                        </div>
+                  
+                        <div class="mb-20">
+                          <label for="teamSize" class="formbold-form-label"> Team Size </label>
+                          <input
+                            type="number"
+                            name="teamSize"
+                            id="teamSize"
+                            class="formbold-form-input"
+                            min="1"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div> 
+
+                <div class="formbold-form-btn-wrapper">
+                    <button class="formbold-back-btn">
+                        Back
+                    </button>
+
+                    <button class="formbold-btn">
+                        Next Step
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_1675_1807)">
+                                <path d="M10.7814 7.33312L7.20541 3.75712L8.14808 2.81445L13.3334 7.99979L8.14808 13.1851L7.20541 12.2425L10.7814 8.66645H2.66675V7.33312H10.7814Z" fill="white"/>
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_1675_1807">
+                                    <rect width="16" height="16" fill="white"/>
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
