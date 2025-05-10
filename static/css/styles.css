@@ -228,7 +228,7 @@
 }
 
 .formbold-radio-input:checked {
-  border-color: #4CAF50; /
+  border-color: #4CAF50;
 }
 
 .formbold-radio-input:checked::before {
@@ -263,17 +263,17 @@
 .slider-wrapper {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* To ensure equal spacing */
+  gap: 10px;
   width: 100%;
 }
 
 .slider-flex {
-  flex: 1; /* Allow it to stretch and fill available space */
-  width: 100%;
+  flex: 1;
+  position: relative;
 }
 
 .formbold-slider {
-  width: 100%; /* Ensure the slider fills the space */
+  width: 100%;
   appearance: none;
   height: 10px;
   border-radius: 5px;
@@ -300,10 +300,15 @@
 }
 
 .min-label,
-.max-label,
+.max-label {
+  font-size: 14px;
+  color: #536387;
+  min-width: 20px;
+}
+
 .slider-value {
   font-size: 14px;
   color: #536387;
-  width: 30px;
-  text-align: center;
+  min-width: 30px;
+  text-align: right;
 }
