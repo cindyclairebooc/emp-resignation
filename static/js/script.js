@@ -86,3 +86,14 @@ function updateSliderValue(slider) {
       updateSliderValue(slider);
     });
   });
+
+function updateSalaryPerProject() {
+  const salary = parseFloat(document.getElementById('monthly_salary').value) || 0;
+  const projects = parseFloat(document.getElementById('projects_handled').value) || 0;
+
+  const spp = projects > 0 ? (salary / projects).toFixed(2) : 0;
+  document.getElementById('salary_per_project').value = spp;
+}
+
+document.getElementById('monthly_salary').addEventListener('input', updateSalaryPerProject);
+document.getElementById('projects_handled').addEventListener('input', updateSalaryPerProject);

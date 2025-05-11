@@ -26,7 +26,7 @@
 
     <div id="form-section" class="formbold-main-wrapper">
         <div class="formbold-form-wrapper">
-            <form action="https://formbold.com/s/FORM_ID" method="POST">
+            <form action="/results" method="POST">
                 <div class="formbold-steps">
                     <ul>
                         <li class="formbold-step-menu1 active">
@@ -80,8 +80,10 @@
                                 name="age"
                                 id="age"
                                 class="formbold-form-input"
-                                min="0"
-                                max="100"
+                                min="20"
+                                max="60"
+                                required
+                                placeholder="22"
                             />
                         </div>
                         <div>
@@ -95,8 +97,8 @@
                     </div>
 
                     <div>
-                        <label for="educ" class="formbold-form-label"> Education Level </label>
-                        <select name="educ" id="educ" class="formbold-form-input">
+                        <label for="education" class="formbold-form-label"> Education Level </label>
+                        <select name="education" id="education" class="formbold-form-input">
                             <option value="hs">High School</option>
                             <option value="bachelor">Bachelor</option>
                             <option value="master">Master</option>
@@ -123,8 +125,8 @@
                     </div>
 
                     <div class="mb-20">
-                        <label for="jobtitle" class="formbold-form-label"> Job Title </label>
-                        <select name="jobtitle" id="jobtitle" class="formbold-form-input">
+                        <label for="job_title" class="formbold-form-label"> Job Title </label>
+                        <select name="job_title" id="job_title" class="formbold-form-input">
                             <option value="analyst">Analyst</option>
                             <option value="consult">Consultant</option>
                             <option value="dev">Developer</option>
@@ -137,14 +139,15 @@
 
                     <div class="formbold-input-flex">
                         <div class="mb-20">
-                            <label for="years" class="formbold-form-label"> Years at Company </label>
+                            <label for="years_at_company" class="formbold-form-label"> Years at Company </label>
                             <input
                             type="number"
-                            name="years"
-                            id="years"
+                            name="years_at_company"
+                            id="years_at_company"
                             class="formbold-form-input"
                             min="0"
-                            max="50"
+                            max="10"
+                            placeholder="0"
                             />
                         </div>
 
@@ -153,11 +156,12 @@
                           <div class="formbold-radio-group">
                             <input
                             type="number"
-                            name="promos"
-                            id="promos"
+                            name="promotions"
+                            id="promotions"
                             class="formbold-form-input"
                             min="0"
                             max="3"
+                            placeholder="0"
                             />
                           </div>
                         </div>
@@ -166,52 +170,78 @@
 
                 <div class="formbold-form-step-3">
                     <div class="formbold-form-confirm">
-                      <div class="formbold-input-flex">
-                        <div style="width: 100%;">
-                            <label for="salary" class="formbold-form-label"> Monthly Salary </label>
-                            <input type="number" name="salary" id="salary" class="formbold-form-input" />
+                        <div class="formbold-input-flex">
+                            <div style="width: 100%;">
+                                <label for="monthly_salary" class="formbold-form-label">Monthly Salary</label>
+                                <input
+                                    type="number"
+                                    name="monthly_salary"
+                                    id="monthly_salary"
+                                    class="formbold-form-input"
+                                    required
+                                    min="3000"
+                                    max="10000"
+                                    placeholder="3000"
+                                />
+                            </div>
                         </div>
-                      </div>
+                 
                   
                       <div class="formbold-input-flex">
                         <div class="mb-10">
-                          <label for="projects" class="formbold-form-label"> Projects Handled </label>
-                          <input type="number" name="projects" id="projects" class="formbold-form-input" />
+                          <label for="projects_handled" class="formbold-form-label"> Projects Handled </label>
+                          <input 
+                            type="number" 
+                            name="projects_handled" 
+                            id="projects_handled" 
+                            class="formbold-form-input"
+                            min="0"
+                            max="100"
+                            placeholder="50" 
+                          />
                         </div>
-                        <div class="mb-10">
-                          <label for="salaryPerProject" class="formbold-form-label"> Salary Per Project </label>
-                          <input type="number" name="salaryPerProject" id="salaryPerProject" class="formbold-form-input" />
-                        </div>
-                      </div>
-                  
-                      <div class="formbold-input-flex">
-                        <div style="width: 100%;">
-                            <label for="workHours" class="formbold-form-label"> Total Work Hours </label>
-                            <input type="number" name="workHours" id="workHours" class="formbold-form-input" />
+                         <div class="mb-10">
+                            <label for="salary_per_project" class="formbold-form-label">Salary Per Project</label>
+                            <input
+                                type="number"
+                                name="salary_per_project"
+                                id="salary_per_project"
+                                class="formbold-form-input"
+                                readonly
+                            />
                         </div>
                       </div>
                   
                       <div class="slider-container">
-                        <label for="overtime" class="formbold-form-label">Overtime Ratio</label>
+                        <label for="overtime_ratio" class="formbold-form-label">Overtime Ratio</label>
                         <div class="slider-wrapper">
-                          <span class="min-label">0</span>
+                          <span class="min-label">0.0</span>
                           <div class="slider-flex">
-                            <input type="range" id="overtime" name="overtime" min="0" max="1" step="0.01" value="0.5" class="formbold-slider" oninput="updateSliderValue(this)" />
+                            <input type="range" 
+                                id="overtime_ratio" 
+                                name="overtime_ratio" 
+                                min="0.0" 
+                                max="0.05" 
+                                step="0.001" 
+                                value="0.015" 
+                                class="formbold-slider" 
+                                oninput="updateSliderValue(this)" 
+                            />
                           </div>
-                          <span class="max-label">1</span>
+                          <span class="max-label">0.05</span>
                           <span class="slider-value" id="overtimeValue">0.5</span>
                         </div>
                       </div>
 
                       <div class="slider-container">
-                        <label for="performance" class="formbold-form-label">Performance Score</label>
+                        <label for="performance_score" class="formbold-form-label">Performance Score</label>
                         <div class="slider-wrapper">
                           <span class="min-label">1</span>
                           <div class="slider-flex">
-                            <input type="range" id="performance" name="performance" min="1" max="10" value="5" class="formbold-slider" oninput="updateSliderValue(this)" />
+                            <input type="range" id="performance_score" name="performance_score" min="1" max="5" value="5" class="formbold-slider" oninput="updateSliderValue(this)" />
                           </div>
-                          <span class="max-label">10</span>
-                          <span class="slider-value" id="performanceValue">5</span>
+                          <span class="max-label">5</span>
+                          <span class="slider-value" id="performance_scoreValue">5</span>
                         </div>
                       </div>
 
@@ -229,12 +259,28 @@
                   
                       <div class="formbold-input-flex">
                         <div class="mb-10">
-                          <label for="training" class="formbold-form-label"> Training Hours </label>
-                          <input type="number" name="training" id="training" class="formbold-form-input" />
+                          <label for="training_hours" class="formbold-form-label"> Training Hours </label>
+                          <input 
+                            type="number" 
+                            name="training_hours" 
+                            id="training_hours" 
+                            class="formbold-form-input"
+                            min="0"
+                            max="100"
+                            placeholder="50" 
+                          />
                         </div>
                         <div class="mb-10">
-                          <label for="sickDays" class="formbold-form-label"> Sick Days </label>
-                          <input type="number" name="sickDays" id="sickDays" class="formbold-form-input" />
+                          <label for="sick_days" class="formbold-form-label"> Sick Days </label>
+                          <input 
+                            type="number" 
+                            name="sick_days" 
+                            id="sick_days" 
+                            class="formbold-form-input"
+                            min="0"
+                            max="15"
+                            placeholder="5"
+                          />
                         </div>
                       </div>
                     </div>
@@ -244,24 +290,28 @@
                     <div class="formbold-form-confirm">
                       <div class="formbold-input-flex">
                         <div class="mb-20">
-                          <label for="remoteWork" class="formbold-form-label"> Remote Work Frequency </label>
+                          <label for="remote_work" class="formbold-form-label"> Remote Work Frequency </label>
                           <input
                             type="number"
-                            name="remoteWork"
-                            id="remoteWork"
+                            name="remote_work"
+                            id="remote_work"
                             class="formbold-form-input"
                             min="0"
+                            max="100"
+                            placeholder="50"
                           />
                         </div>
                   
                         <div class="mb-20">
-                          <label for="teamSize" class="formbold-form-label"> Team Size </label>
+                          <label for="team_size" class="formbold-form-label"> Team Size </label>
                           <input
                             type="number"
-                            name="teamSize"
-                            id="teamSize"
+                            name="team_size"
+                            id="team_size"
                             class="formbold-form-input"
                             min="1"
+                            max="20"
+                            placeholder="5"
                           />
                         </div>
                       </div>
