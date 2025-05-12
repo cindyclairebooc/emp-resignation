@@ -357,3 +357,39 @@
   min-width: 30px;
   text-align: right;
 }
+
+.back-btn {
+  display: inline-block;
+  background-color: #6A64F1;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: #5753d9;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(106, 100, 241, 0.4);
+}
+
+.result-text {
+  font-size: 20px;
+  color: #536387;
+  margin: 20px 0;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.result-highlight {
+  color: #6A64F1;
+  font-weight: 600;
+}
+
+.results-container {
+  min-height: 150vh;
+  padding: 60px 20px;
+}
