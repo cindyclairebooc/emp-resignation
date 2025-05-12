@@ -45,20 +45,29 @@
             color: #6A64F1;
             font-weight: 600;
         }
+
+        .results-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 60px 20px;
+        }
     </style>
 </head>
 <body>
-    <div class="formbold-main-wrapper">
-        <div class="formbold-form-wrapper">
-            <h1 style="color: #07074D; font-size: 32px; margin-bottom: 30px;">Results</h1>
-            <p class="result-text">
-                Hello <span class="result-highlight">{{ request.form.get('firstname', '') }} {{ request.form.get('lastname', '') }}</span>,
-                <br><br>
-                Based on the provided information, here is your prediction result:
-                <br><br>
-                <span class="result-highlight">{{ result }}</span>
-            </p>
-            <a href="/" class="back-btn">Go Back</a>
+    <div class="results-container">
+        <div class="formbold-main-wrapper">
+            <div class="formbold-form-wrapper">
+                <h1 style="color: #07074D; font-size: 32px; margin-bottom: 30px;">Results</h1>
+                <p class="result-text">
+                    Hello <span class="result-highlight">{{ request.form.get('firstname', '') }} {{ request.form.get('lastname', '') }}</span>,
+                    <br><br>
+                    Based on the provided information, here is your prediction result:
+                    <br><br>
+                    <span class="result-highlight">{{ result }}</span>
+                </p>
+                <a href="/" class="back-btn">Go Back</a>
+            </div>
         </div>
     </div>
 </body>
